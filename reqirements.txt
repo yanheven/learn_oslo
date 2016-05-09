@@ -1,0 +1,2 @@
+oslo.config>=3.9.0
+oslo.log>=3.5.0
