@@ -1,0 +1,37 @@
+[DEFAULT]
+
+#
+# From learn_oslo
+#
+
+# help c (string value)
+#apilog = default
+
+
+[api]
+
+#
+# From learn_oslo
+#
+
+# help a (list value)
+#a = default
+
+# help b (list value)
+#b = default
+
+# help c (string value)
+#apilog2 = default
+
+
+[mongo]
+
+#
+# From learn_oslo
+#
+
+# help c (string value)
+#host = mongodb://learn_oslo:RM_DBPASS@30.161.221.245/learn_oslo
+
+# help c (integer value)
+#port = 27017

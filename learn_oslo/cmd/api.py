@@ -26,7 +26,7 @@ apilog_opts = [
 
 mongo_opts = [
     # cfg.StrOpt('db',
-    #            default='rm',
+    #            default='learn_oslo',
     #            help='help c'),
     # cfg.StrOpt('username',
     #            default='default',
@@ -35,9 +35,9 @@ mongo_opts = [
     #            default='default',
     #            help='help c'),
     cfg.StrOpt('host',
-               default='mongodb://rm:RM_DBPASS@30.161.221.245/rm',
+               default='mongodb://learn_oslo:RM_DBPASS@30.161.221.245/learn_oslo',
                help='help c'),
-    cfg.StrOpt('port',
+    cfg.IntOpt('port',
                default=27017,
                help='help c')
 ]
@@ -45,7 +45,7 @@ mongo_opts_group= cfg.OptGroup(name='mongo', title='mongo connection')
 
 LOG = logging.getLogger(__name__)
 CONF = cfg.CONF
-PROG = 'rm-api'
+PROG = 'learn_oslo-api'
 CONF.register_group(api_opts_group)
 CONF.register_group(mongo_opts_group)
 CONF.register_opts(api_opts, api_opts_group)
@@ -68,7 +68,7 @@ def main():
     #     default_log_levels=logging.get_default_log_levels() +
     #     extra_log_level_defaults)
 
-    CONF(project='rm', prog=PROG)
+    CONF(project='learn_oslo', prog=PROG)
 
     logging.setup(CONF, PROG)
     logging.set_defaults()
