@@ -55,6 +55,12 @@ learn_oslo.conf created above.
 `python /learn_oslo/cmd/demo.py`
 
 #### 3.5 generate config file automatically
+auto generator will find entry point of each python project in  python
+ lib path, so we need to install this project before auto generate it's config
+ file as follow in develop mode:
+ ```
+$python setup.py develop
+ ```
 have a look in `setup.cfg`, in sector `entry_points`, `learn_oslo/opts.py`
 and `etc/learn_oslo/learn_oslo-config-generator.conf`, this 3 files are in this
 code folder.
