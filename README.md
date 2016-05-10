@@ -65,3 +65,6 @@ oslo-config-generator --config-file etc/learn_oslo/learn_oslo-config-generator.c
 a new file will be create in folder `etc/learn_oslo/` with name `learn_oslo.conf.sample`.
 you can delete this file and use command above to generate again.
 
+#### 4 oslo service
+execute `python /learn_oslo/cmd/demo_service.py` to start service with 2 workers.
+pay attention to the output and log file `/var/log/learn_oslo/demo_service.py.log`
