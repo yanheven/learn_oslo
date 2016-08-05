@@ -6,12 +6,13 @@ from oslo_log import log as logging
 
 
 api_opts = [
-        cfg.ListOpt('a',
-                    default=['default'],
+        cfg.StrOpt('a',
+                    default='a',
                     help='help a'),
-        cfg.ListOpt('b',
-                    default=['default'],
-                    help='help b'),
+        cfg.StrOpt('b',
+                    default='b',
+                    help='help b',
+                   deprecated_name='a'),
         cfg.StrOpt('apilog2',
                    default='default',
                    help='help c')
@@ -22,6 +23,17 @@ apilog_opts = [
     cfg.StrOpt('apilog',
                 default='default',
                 help='help c')
+]
+
+c = """help c\n
+1.a\n
+2.b"""
+print(c)
+
+cli_opts = [
+    cfg.StrOpt('c',
+               default='c',
+               help=c)
 ]
 
 mongo_opts = [
@@ -51,7 +63,7 @@ CONF.register_group(mongo_opts_group)
 CONF.register_opts(api_opts, api_opts_group)
 CONF.register_opts(mongo_opts, mongo_opts_group)
 CONF.register_opts(apilog_opts)
-
+CONF.register_cli_opts(cli_opts)
 
 
 
